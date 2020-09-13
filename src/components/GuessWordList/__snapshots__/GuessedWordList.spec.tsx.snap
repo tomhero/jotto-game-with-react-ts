@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Congrats /> render component 1`] = `
+exports[`<GuessedWordList /> if there are no words guessed render the component without error 1`] = `
+<div
+  data-test="component-guessed-word-list"
+/>
+`;
+
+exports[`<GuessedWordList /> if there are words guessed render the component without error 1`] = `
 <div
   data-test="component-guessed-word-list"
 />
