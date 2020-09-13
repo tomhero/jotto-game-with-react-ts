@@ -1,8 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Congrats from './Congrats';
+import { shallow, ShallowWrapper } from 'enzyme';
+import Congrats, { CongratsProps } from './Congrats';
+import { findByTesttAttr } from '../../../test/test-utils';
 
-it('renders the component', () => {
-  const component = shallow(<Congrats />);
-  expect(component).toMatchSnapshot();
-});
+describe('<Congrats />', () => {
+  let congratsWrapper: ShallowWrapper;
+  let defaultProps: CongratsProps = {
+  };
+
+  beforeEach(() => {
+    congratsWrapper = shallow(<Congrats {...defaultProps} />);
+  });
+
+  it('renders the component', () => {
+    expect(congratsWrapper).toMatchSnapshot();
+    const containerComponent = findByTesttAttr(congratsWrapper, 'component-congrats');
+    expect(containerComponent).toHaveLength(1);
+  });
+
+})
+

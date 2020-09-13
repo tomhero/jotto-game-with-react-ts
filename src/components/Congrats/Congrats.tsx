@@ -5,7 +5,7 @@ export type CongratsProps = {
 
 const Congrats = (props: CongratsProps) => {
   return (
-    <div>
+    <div data-test="component-congrats">
 
     </div>
   )
