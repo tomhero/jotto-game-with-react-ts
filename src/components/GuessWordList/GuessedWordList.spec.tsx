@@ -23,15 +23,21 @@ describe('<GuessedWordList />', () => {
       const containerComponent = findByTesttAttr(guessedWordListWrapper, 'component-guessed-word-list');
       expect(containerComponent).toHaveLength(1);
     });
-  })
+
+    it('renders instructions to guess a word', () => {
+      const instructions = findByTesttAttr(guessedWordListWrapper, 'guess-instructions');
+      expect(instructions.text()).not.toBe('');
+    });
+  });
 
   describe('if there are words guessed', () => {
     beforeEach(() => {
       guessedWordListWrapper.setProps({
-        guessedWords: [{
-          guessedWord: 'qwerty',
-          letterMatchCount: 2,
-        }]
+        guessedWords: [
+          { guessedWord: 'qwerty', letterMatchCount: 3 },
+          { guessedWord: 'asdfgh', letterMatchCount: 1 },
+          { guessedWord: 'inquiry', letterMatchCount: 7 },
+        ]
       });
     });
 
@@ -40,8 +46,8 @@ describe('<GuessedWordList />', () => {
       const containerComponent = findByTesttAttr(guessedWordListWrapper, 'component-guessed-word-list');
       expect(containerComponent).toHaveLength(1);
     });
-  })
+  });
 
 
-})
+});
 

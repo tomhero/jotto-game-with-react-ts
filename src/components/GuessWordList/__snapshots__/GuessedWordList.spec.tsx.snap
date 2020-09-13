@@ -3,11 +3,23 @@
 exports[`<GuessedWordList /> if there are no words guessed render the component without error 1`] = `
 <div
   data-test="component-guessed-word-list"
-/>
+>
+  <h2
+    data-test="guess-instructions"
+  >
+    Plese guess a word
+  </h2>
+</div>
 `;
 
 exports[`<GuessedWordList /> if there are words guessed render the component without error 1`] = `
 <div
   data-test="component-guessed-word-list"
-/>
+>
+  <h2
+    data-test="guess-instructions"
+  >
+    Plese guess a word
+  </h2>
+</div>
 `;
