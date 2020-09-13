@@ -6,6 +6,7 @@ import { findByTesttAttr } from '../../../test/test-utils';
 describe('<Congrats />', () => {
   let congratsWrapper: ShallowWrapper;
   let defaultProps: CongratsProps = {
+    isSuccess: false,
   };
 
   beforeEach(() => {
@@ -16,6 +17,18 @@ describe('<Congrats />', () => {
     expect(congratsWrapper).toMatchSnapshot();
     const containerComponent = findByTesttAttr(congratsWrapper, 'component-congrats');
     expect(containerComponent).toHaveLength(1);
+  });
+
+  it('reders no text when `isSuccess` prop is false', () => {
+    congratsWrapper.setProps({ isSuccess: false });
+    const component = findByTesttAttr(congratsWrapper, 'component-congrats');
+    expect(component.text()).toBe('');
+  });
+
+  it('render non-empty congrates message when `isSuccess` props is true', () => {
+    congratsWrapper.setProps({ isSuccess: true });
+    const component = findByTesttAttr(congratsWrapper, 'component-congrats');
+    expect(component.text()).not.toBe('');
   });
 
 })
