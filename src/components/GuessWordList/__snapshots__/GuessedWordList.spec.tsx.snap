@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GuessedWordList /> if there are no words guessed render the component without error 1`] = `
+exports[`<GuessedWordList /> if there are no words guessed renders the component without error 1`] = `
 <div
   data-test="component-guessed-word-list"
 >
@@ -12,14 +12,60 @@ exports[`<GuessedWordList /> if there are no words guessed render the component 
 </div>
 `;
 
-exports[`<GuessedWordList /> if there are words guessed render the component without error 1`] = `
+exports[`<GuessedWordList /> if there are words guessed renders the component without error 1`] = `
 <div
   data-test="component-guessed-word-list"
 >
-  <h2
-    data-test="guess-instructions"
+  <section
+    data-test="guessed-word-list-section"
   >
-    Plese guess a word
-  </h2>
+    <h3>
+      Guessed Words
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Matching Letters
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          data-test="guessed-word"
+          key="guessed-word-0"
+        >
+          <td>
+            qwerty
+          </td>
+          <td>
+            3
+          </td>
+        </tr>
+        <tr
+          data-test="guessed-word"
+          key="guessed-word-1"
+        >
+          <td>
+            asdfgh
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr
+          data-test="guessed-word"
+          key="guessed-word-2"
+        >
+          <td>
+            inquiry
+          </td>
+          <td>
+            7
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 </div>
 `;

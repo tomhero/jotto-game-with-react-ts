@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import GuessedWordList, { GuessedWordListProps } from './GuessedWordList';
+import GuessedWordList, { guessedWord, GuessedWordListProps } from './GuessedWordList';
 import { findByTesttAttr } from '../../../test/test-utils';
 
 describe('<GuessedWordList />', () => {
@@ -18,7 +18,7 @@ describe('<GuessedWordList />', () => {
       guessedWordListWrapper.setProps({ guessedWords: [] });
     });
 
-    it('render the component without error', () => {
+    it('renders the component without error', () => {
       expect(guessedWordListWrapper).toMatchSnapshot();
       const containerComponent = findByTesttAttr(guessedWordListWrapper, 'component-guessed-word-list');
       expect(containerComponent).toHaveLength(1);
@@ -31,23 +31,32 @@ describe('<GuessedWordList />', () => {
   });
 
   describe('if there are words guessed', () => {
+    const mockingWordList: guessedWord[] = [
+        { guessedWord: 'qwerty', letterMatchCount: 3 },
+        { guessedWord: 'asdfgh', letterMatchCount: 1 },
+        { guessedWord: 'inquiry', letterMatchCount: 7 },
+    ];
     beforeEach(() => {
       guessedWordListWrapper.setProps({
-        guessedWords: [
-          { guessedWord: 'qwerty', letterMatchCount: 3 },
-          { guessedWord: 'asdfgh', letterMatchCount: 1 },
-          { guessedWord: 'inquiry', letterMatchCount: 7 },
-        ]
+        guessedWords: mockingWordList,
       });
     });
 
-    it('render the component without error', () => {
+    it('renders the component without error', () => {
       expect(guessedWordListWrapper).toMatchSnapshot();
       const containerComponent = findByTesttAttr(guessedWordListWrapper, 'component-guessed-word-list');
       expect(containerComponent).toHaveLength(1);
     });
+
+    it('renders guessed word list table', () => {
+      const wordList = findByTesttAttr(guessedWordListWrapper, 'guessed-word-list-section');
+      expect(wordList).toHaveLength(1);
+    });
+
+    it('has correct number of guessed words', () => {
+      const guessedWordNodes = findByTesttAttr(guessedWordListWrapper, 'guessed-word');
+      expect(guessedWordNodes).toHaveLength(mockingWordList.length);
+    });
   });
-
-
 });
 
