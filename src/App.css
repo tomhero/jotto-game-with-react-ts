@@ -1,36 +1,22 @@
-.App {
+hr {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: xx-large;
   text-align: center;
+  margin: 1.5em auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-notice {
+  font-size: x-large;
+  text-align: center;
+  margin: 1.2em auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.guessed-word-list-table {
+  table-layout: auto;
+  width: auto;
+  margin: 0 auto;
 }

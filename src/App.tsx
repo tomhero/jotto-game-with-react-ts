@@ -1,16 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Congrats from './components/Congrats/Congrats';
+import GuessedWordList from './components/GuessWordList/GuessedWordList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to Jotto the game
-        </p>
-      </header>
+      <Congrats isSuccess />
+      <GuessedWordList guessedWords={[
+        { guessedWord: 'qwerty', letterMatchCount: 3 },
+        { guessedWord: 'asdfgh', letterMatchCount: 1 },
+        { guessedWord: 'inquiry', letterMatchCount: 7 },
+      ]} />
     </div>
   );
 }

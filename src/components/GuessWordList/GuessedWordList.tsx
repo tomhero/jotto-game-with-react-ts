@@ -22,15 +22,16 @@ const GuessedWordList: React.FC<GuessedWordListProps> = (props) => {
     <div data-test="component-guessed-word-list">
       {props.guessedWords.length === 0 ?
         (
-          <h2 data-test="guess-instructions">
+          <h2 className="app-notice" data-test="guess-instructions">
             Plese guess a word
           </h2>
         ) : (
           <section data-test="guessed-word-list-section">
-            <h3>Guessed Words</h3>
-            <table>
+            <h3 className="app-notice">Guessed Words</h3>
+            <table className="guessed-word-list-table">
               <thead>
                 <tr>
+                  <th>Guessed Word</th>
                   <th>Matching Letters</th>
                 </tr>
               </thead>

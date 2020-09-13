@@ -6,11 +6,11 @@ export type CongratsProps = {
 
 const Congrats: React.FC<CongratsProps> = (props) => {
   return (
-    <div data-test="component-congrats">
+    <div className="app-title" data-test="component-congrats">
       {
         props.isSuccess ? (
           <span data-test="comgrate-message">
-            congratulations!! You guessed the word
+            Congratulations!! You guessed the word
           </span>
         )
         : null

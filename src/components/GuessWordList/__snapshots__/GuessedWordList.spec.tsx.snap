@@ -5,6 +5,7 @@ exports[`<GuessedWordList /> if there are no words guessed renders the component
   data-test="component-guessed-word-list"
 >
   <h2
+    className="app-notice"
     data-test="guess-instructions"
   >
     Plese guess a word
@@ -19,12 +20,19 @@ exports[`<GuessedWordList /> if there are words guessed renders the component wi
   <section
     data-test="guessed-word-list-section"
   >
-    <h3>
+    <h3
+      className="app-notice"
+    >
       Guessed Words
     </h3>
-    <table>
+    <table
+      className="guessed-word-list-table"
+    >
       <thead>
         <tr>
+          <th>
+            Guessed Word
+          </th>
           <th>
             Matching Letters
           </th>

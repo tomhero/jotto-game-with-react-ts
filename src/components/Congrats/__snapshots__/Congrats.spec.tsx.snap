@@ -2,6 +2,7 @@
 
 exports[`<Congrats /> renders the component 1`] = `
 <div
+  className="app-title"
   data-test="component-congrats"
 />
 `;
