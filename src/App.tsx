@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Congrats from './components/Congrats/Congrats';
 import GuessedWordList from './components/GuessWordList/GuessedWordList';
+import Input from './components/Input/Input';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         { guessedWord: 'asdfgh', letterMatchCount: 1 },
         { guessedWord: 'inquiry', letterMatchCount: 7 },
       ]} />
+      <Input secretWord="imposter" />
     </div>
   );
 }
